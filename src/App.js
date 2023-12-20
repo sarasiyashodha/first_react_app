@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const App = () => {
   const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    alert("You've changed the counter to " + counter);
+  }, [counter]);
+
   return (
     <div className="App">
       <button onClick={() => setCounter((prevCount) => prevCount - 1)}>-</button>
